@@ -22,7 +22,6 @@ router.get("/:id", async (req, res) => {
     return res.status(400).json({ message: "Product ID is required" });
   }
 
-  // Check if the ID is a valid ObjectId
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(400).json({ message: "Invalid product ID" });
   }
@@ -76,7 +75,7 @@ router.delete("/:id", async (req, res) => {
     res.status(200).json({
       success: true,
       message: "Product deleted successfully.",
-      deletedProduct, // Optional: remove if you don't want to return deleted data
+      deletedProduct,
     });
   } catch (error) {
     console.error("Error deleting product:", error.message);
