@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: true,
-    match: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/, // اعتبارسنجی ایمیل
+    match: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
   },
   password: {
     type: String,
@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema({
     {
       product: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Product", // اطمینان از ارتباط با مدل Product
+        ref: "Product",
         required: true,
       },
       quantity: {
