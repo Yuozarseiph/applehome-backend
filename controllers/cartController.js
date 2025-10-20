@@ -82,7 +82,7 @@ export const removeFromCart = async (req, res) => {
 
     user.cart = user.cart.filter(
       (item) => item.product.toString() !== productId
-    ); // اصلاح شرط فیلتر
+    );
     await user.save();
 
     res.json({ message: "Product removed from cart successfully" });
@@ -108,8 +108,8 @@ export const getCart = async (req, res) => {
     const userId = decoded.id;
 
     const user = await User.findById(userId).populate(
-      "cart.product", // اطمینان از پر کردن اطلاعات محصول
-      "name price image" // فیلدهای مورد نیاز
+      "cart.product",
+      "name price image"
     );
 
     if (!user) {
@@ -141,7 +141,7 @@ export const clearCart = async (req, res) => {
       return res.status(404).json({ message: "User not found" });
     }
 
-    user.cart = []; // خالی کردن سبد خرید
+    user.cart = [];
     await user.save();
 
     res.json({ message: "Cart cleared successfully" });
