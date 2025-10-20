@@ -10,9 +10,9 @@ const productSchema = new mongoose.Schema({
     required: true,
   },
   price: {
-    type: Number, // اطمینان از اینکه نوع قیمت عددی است
+    type: Number,
     required: true,
-    default: 0, // مقدار پیش‌فرض برای جلوگیری از NaN
+    default: 0,
   },
   image: {
     type: String,
