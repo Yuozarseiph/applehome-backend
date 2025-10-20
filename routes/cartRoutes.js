@@ -6,6 +6,6 @@ const router = express.Router();
 router.post("/add", addToCart);
 router.get("/", getCart);
 router.post("/remove", removeFromCart);
-router.post("/clear", clearCart); // مسیر جدید برای خالی کردن سبد خرید
+router.post("/clear", clearCart);
 
 export default router;
